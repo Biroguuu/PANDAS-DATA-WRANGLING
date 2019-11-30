@@ -1,0 +1,9 @@
+#EXPT9_PROBLEM2_SERGIO_2ECE-A
+import pandas as pd 
+
+databox = {'Box':['Box1','Box1','Box1','Box2','Box2','Box2'], 
+           'Dimension':['Length','Width','Height','Length','Width','Height'],
+           'Value': [6,4,2,5,3,4]}
+
+box = pd.DataFrame(databox, columns = ['Box','Dimension','Value'])
+tidy = box.pivot_table(index = ['Box'], columns = 'Dimension', values = 'Value').reset_index()
